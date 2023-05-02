@@ -1,9 +1,11 @@
-import React,{ useState } from "react";
+import React,{ useState, useContext } from "react";
 import { Link} from 'react-router-dom';
 import { Label, TextInput, Checkbox, Button} from "flowbite-react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Register = () => {
     const [error, setError] = useState("");
+    const {createUser} = useContext(AuthContext);
 
     const handleRegister = (event) =>{
         event.preventDefault();
@@ -15,6 +17,8 @@ const Register = () => {
         const confirm = form.confirm.value;
         console.log(name, photo, email, password, confirm);
 
+        setError('');
+
         if(password !== confirm){
             setError('password does not match')
             return;
@@ -22,6 +26,18 @@ const Register = () => {
         else if(password.length < 6){
             setError('password must be 6 characters or longer')
         }
+
+        createUser(email, password)
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+            form.reset();
+        })
+        .catch(error =>{
+            console.log(error);
+            setError(error.message);
+        })
+
     }
 
 

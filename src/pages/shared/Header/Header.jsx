@@ -5,8 +5,18 @@ import { AuthContext } from '../../../provider/AuthProvider';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-    const {user} = useContext(AuthContext);
     const [open, setOpen] =useState(false);
+    const {user, logOut} = useContext(AuthContext);
+
+    const handleLogOut = () =>{
+        logOut()
+        .then(() =>{
+
+        })
+        .catch(error =>{
+            console.log(error)
+        })
+    }
 
     return (
         <div className='my-container'>
@@ -28,8 +38,9 @@ const Header = () => {
                         <ActiveLink to="/">Home</ActiveLink>
                         <ActiveLink to="/blog">Blog</ActiveLink>
                         <p>
-                            {user ? <span>{user.displayName}</span> : <Link to="/login">Login</Link>}
+                            {user ? <span>{user.email}</span> : <Link to="/login">Login</Link>}
                         </p>
+                        <p>{user && <button onClick={handleLogOut}>LogOut</button>}</p>
                     </nav>
             </div>
         </div>
