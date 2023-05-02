@@ -5,9 +5,8 @@ const Chef = ({chef}) => {
     const {_id, chef_picture, chef_name, years_of_experience, numbers_of_recipes, bio, likes} = chef;
     return (
         <div className='my-container'>
-            <img src={chef_picture} alt="chef" />
-            <h3>{chef_name}</h3>
-            <p>Bio: {bio}</p>
+            <img className='mb-2 w-full h-72' src={chef_picture} alt="chef" />
+            <h3><span className='font-medium mb-2'>Chef Name:</span> {chef_name}</h3>
             <p>Experience: {years_of_experience}</p>
             <p>Total Recipes: {numbers_of_recipes}</p>
             <p className='mb-2'>LIkes: {likes}</p>
