@@ -1,14 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Chef from "../Chef/Chef";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
-// import "swiper/css";
-
-// REACT SLICK
 import Slider from "react-slick";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-
 import banner1 from "../../../assets/b-1.png";
 import banner2 from "../../../assets/b-2.png";
 import banner3 from "../../../assets/b-3.png";
