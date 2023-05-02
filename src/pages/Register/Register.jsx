@@ -1,6 +1,6 @@
 import React,{ useState, useContext } from "react";
 import { Link} from 'react-router-dom';
-import { Label, TextInput, Checkbox, Button} from "flowbite-react";
+import { Label, TextInput, Button} from "flowbite-react";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Register = () => {
@@ -43,11 +43,10 @@ const Register = () => {
 
   return (
     <div className="mt-12 my-container">
-      <form onSubmit={handleRegister} className="flex flex-col gap-4 md:w-1/2 mx-auto border-2 border-gray-400  p-5 rounded-lg">
-      <h2 className="text-2xl font-medium text-center
-      mb-3">Register</h2>
+      <form onSubmit={handleRegister} className="flex flex-col gap-4 p-5 mx-auto border-2 border-gray-400 rounded-lg md:w-1/2">
+      <h2 className="mb-3 text-2xl font-medium text-center">Register</h2>
         <div>
-          <div className="mb-2 block">
+          <div className="block mb-2">
             <Label htmlFor="name2" value="Your Name" />
           </div>
           <TextInput
@@ -60,7 +59,7 @@ const Register = () => {
           />
         </div>
         <div>
-          <div className="mb-2 block">
+          <div className="block mb-2">
             <Label htmlFor="photo" value="Photo URL" />
           </div>
           <TextInput
@@ -73,7 +72,7 @@ const Register = () => {
           />
         </div>
         <div>
-          <div className="mb-2 block">
+          <div className="block mb-2">
             <Label htmlFor="email2" value="Your Email" />
           </div>
           <TextInput
@@ -86,7 +85,7 @@ const Register = () => {
           />
         </div>
         <div>
-          <div className="mb-2 block">
+          <div className="block mb-2">
             <Label htmlFor="password2" value="Your Password" />
           </div>
           <TextInput
@@ -99,7 +98,7 @@ const Register = () => {
           />
         </div>
         <div>
-          <div className="mb-2 block">
+          <div className="block mb-2">
             <Label htmlFor="repeat-password" value="Confirm Password" />
           </div>
           <TextInput
@@ -111,19 +110,8 @@ const Register = () => {
             shadow={true}
           />
         </div>
-        <div className="flex items-center gap-2">
-          <Checkbox id="agree" />
-          <Label htmlFor="agree">
-            I agree with the
-            <Link to="/terms"
-              className="text-blue-600 hover:underline"
-            >
-               terms and conditions
-            </Link>
-          </Label>
-        </div>
         <Button type="submit">Register new account</Button>
-        <p className="text-red-400 text-center">{error}</p>
+        <p className="text-center text-red-400">{error}</p>
         <p className="mt-1 text-center">Already have an account? Please <Link className="text-blue-500 underline" to="/login">Login</Link></p>
       </form>
     </div>
