@@ -5,6 +5,7 @@ import banner1 from "../../../assets/b-1.png";
 import banner2 from "../../../assets/b-2.png";
 import banner3 from "../../../assets/b-3.png";
 import Dishes from "../Dishes/Dishes";
+import CustomerReview from "../CustomerReview/CustomerReview";
 
 const Home = () => {
   // React Slick Settings:
@@ -62,7 +63,7 @@ const Home = () => {
                 and satisfy your cravings!
               </p>
               <button className="px-5 py-3 font-medium text-white bg-orange-600 rounded-lg">
-              BOOK A TABLE
+                BOOK A TABLE
               </button>
             </div>
             <img className="h-96" src={banner2} alt="" />
@@ -82,7 +83,7 @@ const Home = () => {
                 sure to transport you to different regions of the globe.
               </p>
               <button className="px-5 py-3 font-medium text-white bg-orange-600 rounded-lg">
-              BOOK A TABLE
+                BOOK A TABLE
               </button>
             </div>
             <img className="h-96" src={banner3} alt="" />
@@ -91,18 +92,32 @@ const Home = () => {
       </Slider>
 
       {/* Chef Section */}
-      <div className="grid grid-cols-1 gap-8 mt-12 md:grid-cols-3">
-        {chefs.map((chef) => (
-          <Chef key={chef._id} chef={chef}></Chef>
-        ))}
+      <div className="mt-20">
+        <h1 className="mb-8 text-5xl font-bold text-center">Our Chefs</h1>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          {chefs.map((chef) => (
+            <Chef key={chef._id} chef={chef}></Chef>
+          ))}
+        </div>
       </div>
-      
-    {/* Dishes Section */}
-    <div className="mt-20">
-        <h1 className="mb-3 text-3xl font-bold text-center">🍔OUR SPECIAL DISHES</h1>
-        <p className="mb-5 text-center text-gray-500">Discover the wide range of dishes that we offer on our food website.  Our menu is carefully <br /> crafted to satisfy your cravings and indulge your taste buds. We use only the freshest ingredients and <br /> cook each dish with care</p>
+
+      {/* Dishes Section */}
+      <div className="mt-20">
+        <h1 className="mb-3 text-3xl font-bold text-center">
+          🍔OUR SPECIAL DISHES
+        </h1>
+        <p className="mb-5 text-center text-gray-500">
+          Discover the wide range of dishes that we offer on our food website.
+          Our menu is carefully <br /> crafted to satisfy your cravings and
+          indulge your taste buds. We use only the freshest ingredients and{" "}
+          <br /> cook each dish with care
+        </p>
         <Dishes></Dishes>
-    </div>
+      </div>
+      {/* Customer Reviews */}
+      <div className="mt-20">
+        <CustomerReview></CustomerReview>
+      </div>
     </div>
   );
 };
