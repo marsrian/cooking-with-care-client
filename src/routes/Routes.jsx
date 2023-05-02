@@ -8,6 +8,7 @@ import Login from '../pages/Login/Login';
 import Register from '../pages/Register/Register';
 import ChefRecipes from '../pages/ChefRecipes/ChefRecipes';
 import Terms from '../pages/Terms/Terms';
+import PrivetRoute from '../privetRoute/PrivetRoute';
 
 const router = createBrowserRouter([
     {
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
         },
         {
             path: '/chefs/:id',
-            element: <ChefRecipes></ChefRecipes>,
+            element: <PrivetRoute><ChefRecipes></ChefRecipes>,</PrivetRoute>,
             loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
         },
         {
