@@ -1,11 +1,13 @@
 import React,{ useState, useContext } from "react";
-import { Link} from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import { Label, TextInput, Button} from "flowbite-react";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Register = () => {
     const [error, setError] = useState("");
-    const {createUser, updateProfileAndPhoto } = useContext(AuthContext);
+    const {createUser, updateProfileAndPhoto, logOut } = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
     const handleRegister = (event) =>{
         event.preventDefault();
@@ -26,6 +28,8 @@ const Register = () => {
         .then(result => {
             const loggedUser = result.user;
             updateUserData(loggedUser, name, photo)
+            logOut();
+            navigate("/login");
             console.log(loggedUser);
             form.reset();
         })
