@@ -20,14 +20,14 @@ const CustomerReview = () => {
   
     return (
         <div>
-            <h1 className="mb-3 text-5xl font-bold text-center">Customer Reviews</h1>
+            <h1 className="mb-3 text-5xl font-bold text-center">Our Testimonials</h1>
             <Slider className="mx-auto md:w-1/2 mb-20" {...settings}>
                 <div>
                     <div className='text-center'>
                         <p className='italic'>"The burgers at Burger Joint were juicy and flavorful, with a great balance of toppings. The fries were crispy and well-seasoned too. The only downside was that the restaurant was a bit noisy."</p>
                         <Rating className='mx-auto' style={{ maxWidth: 150 }} value={4.5} readOnly />
                         <img className='w-20 h-20 mx-auto mt-2 rounded-full' src={person1} alt="" />
-                        <h5>Charlie Brown</h5>
+                        <h5 className='text-lg font-medium'>Charlie Brown</h5>
                     </div>
                 </div>
                 <div>

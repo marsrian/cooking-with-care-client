@@ -116,7 +116,7 @@ const Login = () => {
         </button>
         <button
           onClick={handleGoogleSignIn}
-          className="flex items-center justify-center gap-2 py-2 mx-auto mt-2 font-medium text-blue-500 border-2 border-gray-400 rounded-xl w-60"
+          className="flex items-center justify-center gap-2 py-2 mx-auto mt-2 font-medium text-blue-500 border-2 border-gray-400 rounded-xl w-60 mb-12"
         >
           <FaGoogle /> Sign In with Google
         </button>

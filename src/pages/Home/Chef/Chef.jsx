@@ -2,15 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Chef = ({ chef }) => {
-  const {
-    _id,
-    chef_picture,
-    chef_name,
-    years_of_experience,
-    numbers_of_recipes,
-    bio,
-    likes,
-  } = chef;
+  const { _id, chef_picture, chef_name, years_of_experience, numbers_of_recipes, likes } = chef;
   return (
     <div className="border-2 border-gray-400 rounded-lg">
       <img
@@ -26,7 +18,7 @@ const Chef = ({ chef }) => {
         <p>Total Recipes: {numbers_of_recipes}</p>
         <p className="mb-2">LIkes: {likes}</p>
       </div>
-        <Link to={`/chefs/${_id}`}>
+        <Link to={`/chefrecipes/${_id}`}>
           <button className="w-full px-3 py-2 text-lg font-medium text-white bg-yellow-300 rounded-lg hover:bg-yellow-500">
             View Recipes
           </button>

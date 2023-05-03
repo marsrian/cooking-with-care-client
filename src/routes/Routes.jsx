@@ -7,7 +7,6 @@ import Blog from '../pages/Blog/Blog';
 import Login from '../pages/Login/Login';
 import Register from '../pages/Register/Register';
 import ChefRecipes from '../pages/ChefRecipes/ChefRecipes';
-import Terms from '../pages/Terms/Terms';
 import PrivetRoute from '../privetRoute/PrivetRoute';
 
 const router = createBrowserRouter([
@@ -20,9 +19,9 @@ const router = createBrowserRouter([
             element: <Home></Home>
         },
         {
-            path: '/chefs/:id',
+            path: '/chefrecipes/:id',
             element: <PrivetRoute><ChefRecipes></ChefRecipes>,</PrivetRoute>,
-            loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
+            loader: ({params}) => fetch(`https://chef-recipe-hunter-server-marsrian.vercel.app/chefrecipes/${params.id}`)
         },
         {
             path: 'blog',
@@ -35,10 +34,6 @@ const router = createBrowserRouter([
         {
             path: 'register',
             element: <Register></Register>
-        },
-        {
-            path: 'terms',
-            element: <Terms></Terms>
         },
         {
             path: '*',

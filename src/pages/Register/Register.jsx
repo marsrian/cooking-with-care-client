@@ -43,7 +43,7 @@ const Register = () => {
 
   return (
     <div className="mt-12 my-container">
-      <form onSubmit={handleRegister} className="flex flex-col gap-4 p-5 mx-auto border-2 border-gray-400 rounded-lg md:w-1/2">
+      <form onSubmit={handleRegister} className="flex flex-col gap-4 p-5 mx-auto border-2 border-gray-400 rounded-lg md:w-1/2 mb-12">
       <h2 className="mb-3 text-2xl font-medium text-center">Register</h2>
         <div>
           <div className="block mb-2">
