@@ -38,7 +38,7 @@ const Header = () => {
                         <ActiveLink to="/">Home</ActiveLink>
                         <ActiveLink to="/blog">Blog</ActiveLink>
                         <p>
-                            {user ? <span>{user.email}</span> : <Link to="/login">Login</Link>}
+                            {user ? <img title={`${user.displayName}`} className="w-12 h-12 rounded-full" src={user.photoURL} alt="" /> : <Link to="/login">Login</Link>}
                         </p>
                         <p>{user && <button onClick={handleLogOut}>LogOut</button>}</p>
                     </nav>

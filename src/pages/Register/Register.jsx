@@ -60,13 +60,13 @@ const Register = () => {
         </div>
         <div>
           <div className="block mb-2">
-            <Label htmlFor="photo" value="Photo URL" />
+            <Label htmlFor="photo" value="photoURL" />
           </div>
           <TextInput
             id="photo2"
             type="text"
             name="photo"
-            placeholder="Photo URL"
+            placeholder="PhotoURL"
             required={true}
             shadow={true}
           />
