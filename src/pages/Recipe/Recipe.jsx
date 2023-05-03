@@ -8,7 +8,7 @@ const Recipe = ({recipe}) => {
 
     const handleFavourite = () =>{
         setIsButtonDisabled(true);
-        toast(`${name} is my favourite`)
+        toast(`${name} is my favourite ❤`)
     }
 
     return (

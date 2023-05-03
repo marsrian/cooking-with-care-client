@@ -5,7 +5,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 
 const Register = () => {
     const [error, setError] = useState("");
-    const {createUser} = useContext(AuthContext);
+    const {createUser, updateProfileAndPhoto } = useContext(AuthContext);
 
     const handleRegister = (event) =>{
         event.preventDefault();
@@ -14,22 +14,18 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        const confirm = form.confirm.value;
-        console.log(name, photo, email, password, confirm);
+        console.log(name, photo, email, password);
 
         setError('');
 
-        if(password !== confirm){
-            setError('password does not match')
-            return;
-        }
-        else if(password.length < 6){
+        if(password.length < 6){
             setError('password must be 6 characters or longer')
         }
 
         createUser(email, password)
         .then(result => {
             const loggedUser = result.user;
+            updateUserData(loggedUser, name, photo)
             console.log(loggedUser);
             form.reset();
         })
@@ -37,8 +33,19 @@ const Register = () => {
             console.log(error);
             setError(error.message);
         })
-
     }
+
+  // set userName and photoURL
+  const updateUserData = (user, name, photo) =>{
+    updateProfileAndPhoto(user, name, photo)
+    .then(() =>{
+      console.log('user name update')
+    })
+    .catch(error => {
+      console.log(error.message)
+      setError(error.message)
+    })
+  }
 
 
   return (
@@ -47,10 +54,10 @@ const Register = () => {
       <h2 className="mb-3 text-2xl font-medium text-center">Register</h2>
         <div>
           <div className="block mb-2">
-            <Label htmlFor="name2" value="Your Name" />
+            <Label htmlFor="name" value="Your Name" />
           </div>
           <TextInput
-            id="name2"
+            id="name"
             type="text"
             name="name"
             placeholder="Enter Name"
@@ -63,7 +70,7 @@ const Register = () => {
             <Label htmlFor="photo" value="photoURL" />
           </div>
           <TextInput
-            id="photo2"
+            id="photo"
             type="text"
             name="photo"
             placeholder="PhotoURL"
@@ -93,19 +100,6 @@ const Register = () => {
             type="password"
             name="password"
             placeholder="password"
-            required={true}
-            shadow={true}
-          />
-        </div>
-        <div>
-          <div className="block mb-2">
-            <Label htmlFor="repeat-password" value="Confirm Password" />
-          </div>
-          <TextInput
-            id="repeat-password"
-            type="password"
-            name="confirm"
-            placeholder="confirm password"
             required={true}
             shadow={true}
           />
