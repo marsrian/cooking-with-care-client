@@ -93,7 +93,7 @@ const Home = () => {
 
       {/* Chef Section */}
       <div className="mt-20">
-        <h1 className="mb-8 text-5xl font-bold text-center">Our Chefs</h1>
+        <h1 className="mb-8 text-lg font-bold text-center md:text-5xl">Our Chefs</h1>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {chefs.map((chef) => (
             <Chef key={chef._id} chef={chef}></Chef>
@@ -103,7 +103,7 @@ const Home = () => {
 
       {/* Dishes Section */}
       <div className="mt-20">
-        <h1 className="mb-3 text-3xl font-bold text-center">
+        <h1 className="mb-3 text-lg font-bold text-center md:text-3xl">
           🍔OUR SPECIAL DISHES
         </h1>
         <p className="mb-5 text-center text-gray-500">

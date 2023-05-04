@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 import ActiveLink from '../../../activeLink/ActiveLink';
 import { AuthContext } from '../../../provider/AuthProvider';
-import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [open, setOpen] =useState(false);
@@ -38,7 +37,7 @@ const Header = () => {
                         <ActiveLink to="/">Home</ActiveLink>
                         <ActiveLink to="/blog">Blog</ActiveLink>
                         <p>
-                            {user ? <img title={`${user?.displayName}`} className="w-12 h-12 rounded-full" src={user?.photoURL} alt="" /> : <Link to="/login">Login</Link>}
+                            {user ? <img title={`${user?.displayName}`} className="w-12 h-12 rounded-full" src={user?.photoURL} alt="" /> : <ActiveLink to="/login">Login</ActiveLink>}
                         </p>
                         <p>{user && <button onClick={handleLogOut}>LogOut</button>}</p>
                     </nav>

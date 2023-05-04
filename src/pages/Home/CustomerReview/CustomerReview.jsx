@@ -20,8 +20,8 @@ const CustomerReview = () => {
   
     return (
         <div>
-            <h1 className="mb-3 text-5xl font-bold text-center">Our Testimonials</h1>
-            <Slider className="mx-auto md:w-1/2 mb-20" {...settings}>
+            <h1 className="mb-3 text-lg font-bold text-center md:text-5xl">Our Testimonials</h1>
+            <Slider className="mx-auto mb-20 md:w-1/2" {...settings}>
                 <div>
                     <div className='text-center'>
                         <p className='italic'>"The burgers at Burger Joint were juicy and flavorful, with a great balance of toppings. The fries were crispy and well-seasoned too. The only downside was that the restaurant was a bit noisy."</p>
