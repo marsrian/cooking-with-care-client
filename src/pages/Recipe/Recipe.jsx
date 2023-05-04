@@ -31,7 +31,7 @@ const Recipe = ({recipe}) => {
                 <p className='mb-3'><span className='font-medium'>Rating: </span></p>
                 <Rating className='mx-auto' style={{ maxWidth: 150 }} value={rating} readOnly />
             </div>
-            <button disabled={isButtonDisabled} onClick={handleFavourite} className='px-3 py-2 text-lg font-medium text-white bg-blue-500 rounded-lg '>Favourite</button>
+            <button disabled={isButtonDisabled} onClick={handleFavourite} className={`${isButtonDisabled ? 'bg-blue-400' : 'bg-blue-700' } px-3 py-2 text-lg font-medium text-white rounded-lg `}>Favourite</button>
             <Toaster />
         </div>
     );
