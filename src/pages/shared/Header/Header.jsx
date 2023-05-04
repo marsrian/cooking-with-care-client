@@ -31,8 +31,8 @@ const Header = () => {
                     </span>
                 </div>
             </div>
-            <div className={`flex flex-col md:flex-row absolute md:static md:items-center justify-between bg-gray-200 p-4 duration-500 ${open ? 'top-12' : '-top-96'}`}>
-                    <h1 className='hidden mb-4 text-2xl font-extrabold md:block md:text-3xl text-regalBlack md:mb-0'>Cooking With Care</h1>
+            <div className={`flex flex-col md:flex-row absolute md:static md:items-center justify-between bg-gray-200 p-4 duration-500 ${open ? 'top-4' : '-top-96'}`}>
+                    <h1 className='hidden mb-4 text-lg font-extrabold md:block md:text-3xl text-regalBlack md:mb-0'>Cooking With Care</h1>
                     <nav className='flex flex-col gap-2 text-base font-bold md:gap-10 md:flex-row'>
                         <ActiveLink to="/">Home</ActiveLink>
                         <ActiveLink to="/blog">Blog</ActiveLink>

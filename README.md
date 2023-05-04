@@ -2,7 +2,7 @@
 
 ## Live Link
 
-Hosted in Netlify -> [Cooking-With-Care](https://cooking-with-care.web.app/)
+Hosted in Firebase -> [Cooking-With-Care](https://cooking-with-care.web.app/)
 
 # Home-Page:
 
