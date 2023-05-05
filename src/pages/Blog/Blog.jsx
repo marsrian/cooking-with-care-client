@@ -23,7 +23,7 @@ const Blog = () => {
       </Pdf>
       <div ref={ref}>
         <h2 className="mb-4 text-3xl font-bold text-center text-blue-600">
-          Frequently Asked Questions
+          FAQ
         </h2>
         {/* Flowbite Accordion Start*/}
         <div>
