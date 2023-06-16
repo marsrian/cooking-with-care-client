@@ -6,6 +6,7 @@ import banner2 from "../../../assets/b-2.png";
 import banner3 from "../../../assets/b-3.png";
 import Dishes from "../Dishes/Dishes";
 import CustomerReview from "../CustomerReview/CustomerReview";
+import Summary from "../Summary/Summary";
 
 const Home = () => {
   // React Slick Settings:
@@ -113,6 +114,10 @@ const Home = () => {
           <br /> cook each dish with care
         </p>
         <Dishes></Dishes>
+      </div>
+      {/* Summary Section */}
+      <div className="mt-20">
+      <Summary></Summary>
       </div>
       {/* Customer Reviews */}
       <div className="mt-20">
